@@ -4,6 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
+        // dashboard
         primary: 'rgb(var(--primary) / <alpha-value>)',
         secondary: 'rgb(var(--secondary) / <alpha-value>)',
         accent: 'rgb(var(--accent) / <alpha-value>)',
@@ -13,9 +14,18 @@ export default {
         disable: 'rgb(var(--disable) / <alpha-value>)',
         info: 'rgb(var(--info) / <alpha-value>)',
         warning: 'rgb(var(--warning) / <alpha-value>)',
+        // portfolio ui
+        portprimary: 'rgb(var(--portprimary / <alpha-value>)',
+        portprimary2: 'rgb(var(--portprimary2) / <alpha-value>)',
+        portsecondary: 'rgb(var(--portsecondary) / <alpha-value>)',
+        portaccent: 'rgb(var(--portaccent) / <alpha-value>)',
+        portaccent2: 'rgb(var(--portaccent2) / <alpha-value>)',
+        portheader: 'rgb(var(--portheader) / <alpha-value>)',
+        porthaccent: 'rgb(var(--porthaccent) / <alpha-value>)',
       },
 
       backgroundColor: {
+        // dashboard
         primary: 'rgb(var(--primary) / <alpha-value>)',
         secondary: 'rgb(var(--secondary) / <alpha-value>)',
         accent: 'rgb(var(--accent) / <alpha-value>)',
@@ -25,6 +35,14 @@ export default {
         disable: 'rgb(var(--disable) / <alpha-value>)',
         info: 'rgb(var(--info) / <alpha-value>)',
         warning: 'rgb(var(--warning) / <alpha-value>)',
+         // portfolio ui
+         portprimary: 'rgb(var(--portprimary / <alpha-value>)',
+         portprimary2: 'rgb(var(--portprimary2) / <alpha-value>)',
+         portsecondary: 'rgb(var(--portsecondary) / <alpha-value>)',
+         portaccent: 'rgb(var(--portaccent) / <alpha-value>)',
+         portaccent2: 'rgb(var(--portaccent2) / <alpha-value>)',
+         portheader: 'rgb(var(--portheader) / <alpha-value>)',
+         porthaccent: 'rgb(var(--porthaccent) / <alpha-value>)',
       },
 
       fill: {
@@ -52,15 +70,41 @@ export default {
           "0%": { transform: "translateX(-100%)" },
           "100%": { transform: "translateX(100%)" },
         },
+
+        typewriter: {
+          to: {
+            left: '100%',
+          },
+        },
+        blink: {
+          '0%': {
+            opacity: '0',
+          },
+          '0.1%': {
+            opacity: '1',
+          },
+          '50%': {
+            opacity: '1',
+          },
+          '50.1%': {
+            opacity: '0',
+          },
+          '100%': {
+            opacity: '0',
+          },
+        },
       },
 
       animation: {
         rotate: "rotate 2s linear infinite",
-        loading: "loading 1.5s ease-in infinite"
+        loading: "loading 1.5s ease-in infinite",
+        // ui
+        typewriter: 'typewriter 2s steps(11) forwards',
+        caret: 'typewriter 2s steps(11) forwards, blink 1s steps(11) infinite 2s'
       }
 
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/aspect-ratio'),],
 }
 

@@ -33,6 +33,14 @@
   --disable: 127 127 127;
   --info: 68 130 208;
   --warning: 177 130 47;
+  /* portfolio ui */
+  --portprimary: 29 27 27;
+  --portprimary2: 17 17 17;
+  --portsecondary: 255 255 255;
+  --portaccent: 225 255 0;
+  --portaccent2: 46 5 209;
+  --portheader: 12 12 12 0;
+  --porthaccent: 123 255 0;
 }
 
 .dark{
@@ -45,6 +53,14 @@
   --disable: 127 127 127;
   --info: 68 130 208;
   --warning: 177 130 47;
+   /* portfolio ui */
+   --portprimary: 29 27 27;
+   --portprimary2: 17 17 17;
+   --portsecondary: 255 255 255;
+   --portaccent: 225 255 0;
+   --portaccent2: 46 5 209;
+   --portheader: 12 12 12 0;
+   --porthaccent: 123 255 0;
 }
 
 @layer base {
@@ -179,6 +195,163 @@
 }
 
 @layer components {
+  /* Reusable components */
+  .animate-type{
+    @apply
+    relative w-[max-content] font-mono
+    before:absolute before:inset-0 before:animate-typewriter
+  before:bg-white
+    after:absolute after:inset-0 after:w-[0.125em] after:animate-caret
+  after:bg-black
+  }
+  .animate-type2{
+    @apply
+    relative w-[max-content] font-mono
+    before:absolute before:inset-0 before:animate-typewriter
+  before:bg-black
+    after:absolute after:inset-0 after:w-[0.125em] after:animate-caret
+  after:bg-white
+  }
+
+ 
+.container2{
+  @apply
+  px-[15rem]
+}
+.container{
+  @apply
+  mx-[20rem]
+}
+
+.btn{
+  @apply
+  py-3
+  px-7
+  bg-white
+  text-black
+  border
+  border-black
+  transition-all
+}
+.btn:hover{
+  @apply
+  py-3
+  px-7
+  bg-black
+  text-white
+  border-[1px]
+  border-white
+  transition-all
+}
+
+.btn--v2{
+  @apply
+  py-3
+  px-7
+  bg-white
+  text-black
+  border
+  border-black
+  transition-all
+}
+
+.btn--v3{
+  @apply
+  py-3
+  px-7
+  bg-black
+  text-white
+  border
+  border-black
+  transition-all
+}
+
+.btn--v3:hover{
+  @apply
+  py-3
+  px-7
+  bg-white
+  text-black
+  border
+  border-black
+  transition-all
+}
+
+/* ui portfolio */
+.menu{
+  @apply
+  text-lg
+}
+
+.menu li{
+  @apply
+  hover:text-porthaccent
+  transition-all
+}
+
+.active {
+  @apply
+  text-porthaccent
+}
+
+/* hero banner */
+.banner{
+  @apply
+  bg-[url(../../../img/bg-banner2.jpg)]
+  h-[100vh]
+  bg-cover
+  bg-center
+  bg-no-repeat
+}
+
+.socialshb{
+  @apply
+  text-3xl
+}
+
+.socialshb li{
+  @apply
+  hover:text-haccent
+  transition-all
+}
+
+/* about me section */
+.aboutMe{
+  @apply
+  text-black
+}
+
+.socialam{
+  @apply
+  text-2xl
+}
+
+.socialam li{
+  @apply
+  hover:text-porthaccent
+  transition-all
+}
+
+/* cta */
+.cta__content{
+  @apply
+  text-black
+}
+
+  /* footer */
+  .right ul li{
+    @apply
+    text-2xl
+  }
+
+  .socialsf li{
+    @apply
+    hover:text-porthaccent
+    transition-all
+  }
+/* ui poprtfolio END */
+
+
   .nav{
     @apply
     space-y-4 
