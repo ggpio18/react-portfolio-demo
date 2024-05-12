@@ -1,0 +1,17 @@
+RewriteEngine On
+# use for authentication
+RewriteCond %{HTTP:Authorization} ^(.+)$
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+Header set Access-Control-Allow-Origin *
+
+#################################### ALL FOR DEVELOPER #################################
+
+### SETTING ROLES ###
+RewriteRule ^portfolio$ controllers/portfolio/portfolio.php [L]
+RewriteRule ^portfolio/([0-9]+)$ controllers/portfolio/portfolio.php?portfolioid=$1 [L]
+RewriteRule ^portfolio/active/([0-9]+)$ controllers/portfolio/active.php?portfolioid=$1 [L]
+RewriteRule ^portfolio/search$ controllers/portfolio/search.php [L]
+
