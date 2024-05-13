@@ -1,17 +1,16 @@
 import React from 'react'
-import Navigation from '../../../../partials/Navigation'
-import Header from '../../../../partials/Header'
 import { FiPlus } from 'react-icons/fi'
-import { Link } from 'react-router-dom'
-import PortfolioTable from './PortfolioTable'
-import ModalAddPortfolio from './ModalAddPortfolio'
-import useQueryData from '../../../../custom-hook/useQueryData'
 import { setIsAdd } from '../../../../../store/StoreAction'
 import { StoreContext } from '../../../../../store/StoreContext'
-import ModalError from '../../../../partials/modals/ModalError'
+import useQueryData from '../../../../custom-hook/useQueryData'
+import Header from '../../../../partials/Header'
+import Navigation from '../../../../partials/Navigation'
 import Toast from '../../../../partials/Toast'
+import ModalErrorServices from '../../../../partials/modalsServices/ModalErrorServices'
+import ModalAddServices from './ModalAddServices'
+import ServicesTable from './ServicesTable'
 
-const Portfolio = () => {
+const Services = () => {
     const {store, dispatch} = React.useContext(StoreContext)
     const [isSearch, setIsSeach] = React.useState(false);
     const [keyword, setKeyword] = React.useState('');
@@ -21,11 +20,11 @@ const Portfolio = () => {
         isLoading,
         isFetching,
         error,
-        data: portfolio,
+        data: services,
       } = useQueryData(
-        isSearch ? "/v1/portfolio/search" : "/v1/portfolio", // endpoint
+        isSearch ? "/v1/services/search" : "/v1/services", // endpoint
         isSearch ? "post" : "get", // method
-        "portfolio", // key
+        "services", // key
         {
             searchValue: keyword
         }
@@ -48,7 +47,7 @@ const Portfolio = () => {
         <div className='flex relative'>
             <div className={`main-wrapper transition-all px-4 py-3 max-h-[calc(100vh - 65px)] w-full `}>
                 <div className='flex justify-between items-center'>
-                    <h1>Projects Database</h1>
+                    <h1>Service Database</h1>
                     {/* <Searchbar setIsSeach={setIsSeach} setKeyword={setKeyword}/> */}
                 </div>
             
@@ -61,20 +60,20 @@ const Portfolio = () => {
                     </button>
                 </div>
                     {/* table here */}
-                    <PortfolioTable  isLoading={isLoading} portfolio={portfolio} isFetching={isFetching} setItemEdit={setItemEdit}/>
+                    <ServicesTable  isLoading={isLoading} services={services} isFetching={isFetching} setItemEdit={setItemEdit}/>
             </div>
              {/* database info */}
         </div>
 
         </main>
 
-        {store.isAdd && <ModalAddPortfolio  itemEdit={itemEdit}/>}
+        {store.isAdd && <ModalAddServices itemEdit={itemEdit}/>}
         {store.success && <Toast/>}
-        {store.error && <ModalError position="center"/>}
+        {store.error && <ModalErrorServices position="center"/>}
     </section>
 
     </>
   )
 }
 
-export default Portfolio
+export default Services

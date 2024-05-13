@@ -6,6 +6,13 @@ import Logo from './svg/Logo';
 
 
 const Navigation = () => {
+  const [activeLink, setActiveLink] = React.useState('');
+  
+
+  const handleLinkClick = (link) => {
+    setActiveLink(() => link);
+  };
+
   return (
     <aside className='px-4 py-6 w-[250px] text-primary h-screen border-r border-line'>
       <div className='flex items-center gap-4'>
@@ -15,10 +22,13 @@ const Navigation = () => {
       
 
       <ul className='nav'>
-        <li className='nav-link active'><Link to="#"><MdOutlineDashboard />Dashboard</Link></li>
+        <li className={`nav-link ${activeLink === '/portfolio' ? 'active' : ''}`}><Link to="/portfolio" onClick={() => handleLinkClick('/portfolio')}><MdOutlineDashboard />Dashboard</Link></li>
+
         <li className='nav-link'><Link to="#"><AiOutlineMessage />Messenger</Link></li>
-        <li className='nav-link'><Link to="#"><MdOutlineDashboard />Calendar</Link></li>
-        <li className='nav-link'><Link to="#"><MdOutlineDashboard />Database</Link></li>
+
+        <li className={`nav-link ${activeLink === '/service' ? 'active' : ''}`}><Link to="/service" onClick={() => handleLinkClick('/service')}><MdOutlineDashboard />Services</Link></li>
+
+        <li className={`nav-link ${activeLink === '/project' ? 'active' : ''}`}><Link to="/project" onClick={() => handleLinkClick('/project')}><MdOutlineDashboard />Project</Link></li>
         <li className='nav-link'><Link to="#"><MdOutlineDashboard />Attendance</Link></li>
         <li className='nav-link'><Link to="#"><MdOutlineDashboard />Settings</Link></li>
       </ul>

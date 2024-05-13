@@ -1,17 +1,16 @@
 import React from 'react'
-import Navigation from '../../../../partials/Navigation'
-import Header from '../../../../partials/Header'
 import { FiPlus } from 'react-icons/fi'
-import { Link } from 'react-router-dom'
-import PortfolioTable from './PortfolioTable'
-import ModalAddPortfolio from './ModalAddPortfolio'
-import useQueryData from '../../../../custom-hook/useQueryData'
 import { setIsAdd } from '../../../../../store/StoreAction'
 import { StoreContext } from '../../../../../store/StoreContext'
-import ModalError from '../../../../partials/modals/ModalError'
+import useQueryData from '../../../../custom-hook/useQueryData'
+import Header from '../../../../partials/Header'
+import Navigation from '../../../../partials/Navigation'
 import Toast from '../../../../partials/Toast'
+import ModalErrorProject from '../../../../partials/modalsProject/ModalErrorProject'
+import ModalAddProject from './ModalAddProject'
+import ProjectTable from './ProjectTable'
 
-const Portfolio = () => {
+const Project = () => {
     const {store, dispatch} = React.useContext(StoreContext)
     const [isSearch, setIsSeach] = React.useState(false);
     const [keyword, setKeyword] = React.useState('');
@@ -21,11 +20,11 @@ const Portfolio = () => {
         isLoading,
         isFetching,
         error,
-        data: portfolio,
+        data: project,
       } = useQueryData(
-        isSearch ? "/v1/portfolio/search" : "/v1/portfolio", // endpoint
+        isSearch ? "/v1/project/search" : "/v1/project", // endpoint
         isSearch ? "post" : "get", // method
-        "portfolio", // key
+        "project", // key
         {
             searchValue: keyword
         }
@@ -61,20 +60,20 @@ const Portfolio = () => {
                     </button>
                 </div>
                     {/* table here */}
-                    <PortfolioTable  isLoading={isLoading} portfolio={portfolio} isFetching={isFetching} setItemEdit={setItemEdit}/>
+                    <ProjectTable  isLoading={isLoading} project={project} isFetching={isFetching} setItemEdit={setItemEdit}/>
             </div>
              {/* database info */}
         </div>
 
         </main>
 
-        {store.isAdd && <ModalAddPortfolio  itemEdit={itemEdit}/>}
+        {store.isAdd && <ModalAddProject  itemEdit={itemEdit}/>} 
         {store.success && <Toast/>}
-        {store.error && <ModalError position="center"/>}
+        {store.error && <ModalErrorProject position="center"/>}
     </section>
 
     </>
   )
 }
 
-export default Portfolio
+export default Project

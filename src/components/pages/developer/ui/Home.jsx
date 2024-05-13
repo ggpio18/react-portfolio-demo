@@ -4,6 +4,10 @@ import Banner from './banner/Banner'
 import About from './about/About'
 import Projects from './project/Projects'
 import Footer from './footer/Footer'
+import Featutres from './features/Featutres'
+import Terminal from './terminal/Terminal'
+import Projectg from './project gallery/Projectg'
+import Cta from './cta/Cta'
 
 const Home = () => {
   return (
@@ -11,7 +15,11 @@ const Home = () => {
       <Header/>
       <Banner/>
       <About/>
-      <Projects/>
+      <Featutres/>
+      <Terminal/>
+      <Projectg/>
+      <Cta/>
+      {/* projects */}
       <Footer/>
     </div>
   )

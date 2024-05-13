@@ -5,7 +5,7 @@ const Header = () => {
   let Links =[
     {name:"HOME",link:"/home"},
     {name:"ABOUT",link:"#aboutMe"},
-    {name:"PROJECT",link:"#"},
+    {name:"PROJECT",link:"/projects"},
     {name:"CONTACT",link:"/contact"},
   ];
   let [open, setOpen] =useState(false);
@@ -27,8 +27,8 @@ const Header = () => {
             {/* linke items */}
             <ul className={`md:flex md:items-center md:pb-0 pb-1 absolute md:static bg-black md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${open ? 'top-[4rem]' : 'top-[-490px]'}`}>
                 {
-                    Links.map((link) => (
-                    <li className='md:ml-8 md:my-0 my-7 cursor-pointer'>
+                    Links.map((link, key) => (
+                    <li className='md:ml-8 md:my-0 my-7 cursor-pointer' key={key}>
                         <a href={link.link} className='text-white hover:text-haccent duration-500'>{link.name}</a>
                     </li>))
                 }

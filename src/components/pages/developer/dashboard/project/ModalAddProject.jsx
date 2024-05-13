@@ -10,7 +10,7 @@ import * as Yup from 'yup'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { queryData } from '../../../../helpers/queryData'
 
-const ModalAddPortfolio = ({itemEdit}) => {
+const ModalAddProject = ({itemEdit}) => {
     const {store, dispatch} = React.useContext(StoreContext);
     const handleClose = () => dispatch(setIsAdd(false));
 
@@ -18,13 +18,13 @@ const ModalAddPortfolio = ({itemEdit}) => {
     const mutation = useMutation({
         mutationFn: (values) =>
         queryData(
-            itemEdit ? `/v1/portfolio/${itemEdit.portfolio_aid}` :`/v1/portfolio`,
+            itemEdit ? `/v1/project/${itemEdit.project_aid}` :`/v1/project`,
             itemEdit ? "put" : "post",
             values
         ),
    
         onSuccess: (data) => {
-        queryClient.invalidateQueries({ queryKey: ["portfolio"] });
+        queryClient.invalidateQueries({ queryKey: ["project"] });
         if (data.success) {
             dispatch(setIsAdd(false));
             dispatch(setSuccess(true));
@@ -38,19 +38,15 @@ const ModalAddPortfolio = ({itemEdit}) => {
     });
 
     const initVal ={
-        portfolio_title: itemEdit ? itemEdit.portfolio_title : "",
-        portfolio_category: itemEdit ? itemEdit.portfolio_category : "",
-        portfolio_image: itemEdit ? itemEdit.portfolio_image : "",
-        portfolio_description: itemEdit ? itemEdit.portfolio_description : "",
-        portfolio_publish_date: itemEdit ? itemEdit.portfolio_publish_date : "",
+        project_pl: itemEdit ? itemEdit.project_pl : "",
+        project_title: itemEdit ? itemEdit.project_title : "",
+        project_description: itemEdit ? itemEdit.project_description : "",
     }
 
     const yupSchema = Yup.object({
-        portfolio_title: Yup.string().required("Required g"),
-        portfolio_category: Yup.string().required("Required g"),
-        portfolio_image: Yup.string().required("Required g"),
-        portfolio_description: Yup.string().required("Required g"),
-        portfolio_publish_date: Yup.string().required("Required g"),
+        project_pl: Yup.string().required("Required g"),
+        project_title: Yup.string().required("Required g"),
+        project_description: Yup.string().required("Required g"),
     })
 
   return (
@@ -58,7 +54,7 @@ const ModalAddPortfolio = ({itemEdit}) => {
       <ModalWrapper>
       <div className="main-modal w-[300px] bg-secondary text-content h-full">
                 <div className="modal-header p-4 relative">
-                    <h2>New data</h2>
+                    <h2>New Project data</h2>
                     <button className='absolute top-[25px] right-4' onClick={handleClose}><LiaTimesSolid/></button>
                 </div>
                 <div className="modal-body p-4">
@@ -76,25 +72,17 @@ const ModalAddPortfolio = ({itemEdit}) => {
                             
                         <div className="input-wrap">
                             <InputText
-                                label="Title"
+                                label="Programming language"
                                 type="text"
-                                name="portfolio_title"
+                                name="project_pl"
                             />
                         </div>
 
                         <div className="input-wrap">
                         <InputText
-                                label="Category"
+                                label="Project title"
                                 type="text"
-                                name="portfolio_category"
-                            />
-                        </div>
-          
-                        <div className="input-wrap">
-                        <InputText
-                                label="Image"
-                                type="text"
-                                name="portfolio_image"
+                                name="project_title"
                             />
                         </div>
 
@@ -102,18 +90,11 @@ const ModalAddPortfolio = ({itemEdit}) => {
                         <InputTextArea
                                 label="Description"
                                 type="text"
-                                name="portfolio_description"
+                                name="project_description"
                                 className='h-[15rem] resize-none'
                             />
                         </div>
 
-                        <div className="input-wrap">
-                        <InputText
-                                label="Published Date"
-                                type="text"
-                                name="portfolio_publish_date"
-                            />
-                        </div>
 
                         </div>
 
@@ -131,4 +112,4 @@ const ModalAddPortfolio = ({itemEdit}) => {
   )
 }
 
-export default ModalAddPortfolio
+export default ModalAddProject

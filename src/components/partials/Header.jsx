@@ -11,7 +11,7 @@ const Header = () => {
         <img src="https://via.placeholder.com/40x40" alt=""  className='size-[40px] rounded-full object-cover'/>
 
         <div>
-          <button className='flex items-center gap-5'>Muh. Bmabang <LiaAngleDownSolid /></button>
+          <button className='flex items-center gap-5'>Pio Aranza<LiaAngleDownSolid /></button>
             <div className='hidden header-dropdown absolute bg-secondary p-4 rounded-md right-0 top-[calc(100%+10px)] text-center shadow-xs'>
             <img src="https://via.placeholder.com/40x40" alt=""  className='size-[40px] rounded-full object-cover mx-auto'/>
             <h4 className='mb-1'>Muh Bambang</h4>

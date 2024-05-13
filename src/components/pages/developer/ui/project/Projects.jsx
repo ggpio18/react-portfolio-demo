@@ -5,6 +5,8 @@ import ModalAddPortfolio from '../../dashboard/portfolio/ModalAddPortfolio';
 import ModalProject from './ModalProject';
 import { StoreContext } from '../../../../../store/StoreContext';
 import { setIsShow } from '../../../../../store/StoreAction';
+import Header from '../header/Header';
+import Footer from '../footer/Footer';
 
 const Projects = () => {
     const {store, dispatch} = React.useContext(StoreContext);
@@ -14,9 +16,9 @@ const Projects = () => {
         isLoading,
         isFetching,
         error,
-        data: portfolio,
+        data: project,
       } = useQueryData(
-        "/v1/portfolio", // endpoint
+        "/v1/project", // endpoint
         "get", // method
       );
 
@@ -27,7 +29,9 @@ const Projects = () => {
     }
   return (
     <>
-      <section className=''>
+    <Header/>
+
+      {/* <section className=''>
         <div className='max-w-[1200px] mx-auto px-4'>
         <h1 className='text-center mb-5 text-content'>projects</h1>
 
@@ -54,7 +58,7 @@ const Projects = () => {
     
         </div>
       </section>
-      {store.isShow && <ModalProject position="center" info={info}/>}
+      {store.isShow && <ModalProject position="center" info={info}/>} */}
 
       {/* Projects */}
       <div className='text-center mt-[8rem]' data-aos="fade-down">
@@ -67,13 +71,14 @@ const Projects = () => {
         </div>
 <div className="lg:px-[20rem] mt-10">
 <ul className="grid grid-cols-1 xl:grid-cols-1 gap-y-10 gap-x-6 items-start p-8">
-    <li className="relative flex flex-col sm:flex-row xl:flex-row items-start">
+{project?.data.map((item, key)=>(
+    <li className="relative flex flex-col sm:flex-row xl:flex-row items-start" key={key}>
         <div className="order-1 sm:ml-6 xl:ml-6 w-[495px]" data-aos="fade-down-left">
             <h3 className="mb-1 text-slate-900 font-semibold">
-                <span className="mb-1 block text-sm leading-6 text-indigo-500">html/css</span>title
+                <span className="mb-1 block text-sm leading-6 text-indigo-500">{item.project_pl}</span>{item.project_title}
             </h3>
             <div className="prose prose-slate prose-sm text-slate-600">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione quos accusantium expedita nostrum quae dolorem cupiditate veniam. Quas, cumque quo!</p>
+                <p>{item.project_description}</p>
                 <ul>
                     <li>hello</li>
                     <li>hello</li>
@@ -87,8 +92,11 @@ const Projects = () => {
         </div>
         <img src="../../../public/img/bg-banner.jpg" alt="" className="mb-6 shadow-md rounded-lg bg-slate-50 w-full sm:w-[17rem] sm:mb-0 xl:mb-6 xl:w-[500px] h-[314px] w-[597px] object-cover border-2 border-black hover:border-[30px] transition-all" width="1216" height="640" data-aos="flip-left"/>
     </li>
+    ))}
 </ul>
 </div>
+
+<Footer/>
     </>
   )
 }

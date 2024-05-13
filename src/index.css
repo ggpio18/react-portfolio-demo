@@ -311,7 +311,7 @@
 
 .socialshb li{
   @apply
-  hover:text-haccent
+  hover:text-porthaccent
   transition-all
 }
 

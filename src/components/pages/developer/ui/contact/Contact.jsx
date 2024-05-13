@@ -1,8 +1,11 @@
 import React from 'react'
+import Header from '../header/Header'
+import Footer from '../footer/Footer'
 
 const Contact = () => {
   return (
     <>
+    <Header/>
     <div className="relative flex items-top justify-center h-[40rem] bg-white dark:bg-white sm:items-center sm:pt-0 md:mt-[10rem]" data-aos="fade-down">
         <div className="max-w-6xl mx-auto sm:px-6 lg:px-8">
             <div className="mt-8 overflow-hidden">
@@ -69,6 +72,7 @@ const Contact = () => {
             </div>
         </div>
     </div>
+    <Footer/>
     </>
   )
 }

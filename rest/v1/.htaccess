@@ -9,9 +9,27 @@ Header set Access-Control-Allow-Origin *
 
 #################################### ALL FOR DEVELOPER #################################
 
-### SETTING ROLES ###
+### SETTING PROJECTS sir mon ###
 RewriteRule ^portfolio$ controllers/portfolio/portfolio.php [L]
 RewriteRule ^portfolio/([0-9]+)$ controllers/portfolio/portfolio.php?portfolioid=$1 [L]
 RewriteRule ^portfolio/active/([0-9]+)$ controllers/portfolio/active.php?portfolioid=$1 [L]
 RewriteRule ^portfolio/search$ controllers/portfolio/search.php [L]
+
+### SETTING SERVICES ###
+RewriteRule ^services$ controllers/services/services.php [L]
+RewriteRule ^services/([0-9]+)$ controllers/services/services.php?servicesid=$1 [L]
+RewriteRule ^services/active/([0-9]+)$ controllers/services/active.php?servicesid=$1 [L]
+RewriteRule ^services/search$ controllers/services/search.php [L]
+
+### SETTING PROJECT###
+RewriteRule ^project$ controllers/project/project.php [L]
+RewriteRule ^project/([0-9]+)$ controllers/project/project.php?projectid=$1 [L]
+RewriteRule ^project/active/([0-9]+)$ controllers/project/active.php?projectid=$1 [L]
+RewriteRule ^project/search$ controllers/project/search.php [L]
+
+### SETTING CONTACT###
+RewriteRule ^contactt$ controllers/contactt/contactt.php [L]
+RewriteRule ^contactt/([0-9]+)$ controllers/contactt/contactt.php?contacttid=$1 [L]
+RewriteRule ^contactt/active/([0-9]+)$ controllers/contactt/active.php?contacttid=$1 [L]
+RewriteRule ^contactt/search$ controllers/contactt/search.php [L]
 
