@@ -16,9 +16,9 @@ const ModalProject = ({position, info}) => {
                 <img src="https://via.placeholder.com/400x400" alt=""  className='w-full h-[400px] object-cover'/>
 
                 <div className='content'>
-                    <h3>{info.portfolio_title}</h3>
-                    <small>{info.portfolio_category}</small>
-                    <p className='my-5'>{info.portfolio_description}</p>
+                    <h3>{info.project_pl}</h3>
+                    <small>{info.project_title}</small>
+                    <p className='my-5'>{info.project_description}</p>
                 </div>
 
             </div>

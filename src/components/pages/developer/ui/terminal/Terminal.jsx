@@ -59,15 +59,15 @@ const Terminal = () => {
       </div>
       {output.map((item, index) => (
         <div key={index} className={item.type === 'input' ? 'mt-2' : 'ml-6'}>
-          <p className={item.type === 'input' ? 'text-green-400' : 'text-white'}>$</p>
-          <p className={item.type === 'input' ? 'text-haccent ml-2' : ''}>{item.text}</p>
+          <p className={item.type === 'input' ? 'text-green-500' : 'text-white'}>$</p>
+          <p className={item.type === 'input' ? 'text-porthaccent ml-2' : ''}>{item.text}</p>
         </div>
       ))}
       <div className="mt-2">
         <p className="text-green-400">$</p>
         <input
           type="text"
-          className="text-haccent ml-2 bg-transparent outline-none border-none focus:outline-none"
+          className="text-porthaccent ml-2 bg-transparent outline-none border-none focus:outline-none"
           value={inputValue}
           onChange={handleInputChange}
           onKeyDown={handleEnterPress}

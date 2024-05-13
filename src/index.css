@@ -68,7 +68,8 @@
     @apply
     bg-primary
     text-content
-    font-regular;
+    font-regular
+    overflow-x-hidden
   }
 
   a{

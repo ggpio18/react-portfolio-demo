@@ -1,12 +1,10 @@
-import React from 'react'
-import useQueryData from '../../../../custom-hook/useQueryData';
-import SpinnerFetching from '../../../../partials/spinners/SpinnerFetching';
-import ModalAddPortfolio from '../../dashboard/portfolio/ModalAddPortfolio';
-import ModalProject from './ModalProject';
-import { StoreContext } from '../../../../../store/StoreContext';
+import React from 'react';
 import { setIsShow } from '../../../../../store/StoreAction';
-import Header from '../header/Header';
+import { StoreContext } from '../../../../../store/StoreContext';
+import useQueryData from '../../../../custom-hook/useQueryData';
 import Footer from '../footer/Footer';
+import Header from '../header/Header';
+import ModalProject from './ModalProject';
 
 const Projects = () => {
     const {store, dispatch} = React.useContext(StoreContext);
@@ -18,7 +16,7 @@ const Projects = () => {
         error,
         data: project,
       } = useQueryData(
-        "/v1/project", // endpoint
+        "/v1/project", // endpointO
         "get", // method
       );
 
@@ -85,16 +83,19 @@ const Projects = () => {
                     <li>hello</li>
                     <li>hello</li>
                 </ul>
-            </div><a
-                className="btn inline-flex items-center  text-sm font-semibold whitespace-nowrap  mt-2"
+            </div>
+            <button className="btn inline-flex items-center  text-sm font-semibold whitespace-nowrap  mt-2" onClick={()=>handleShowProject(item)}>Visit here</button>
+            {/* <a className="btn inline-flex items-center  text-sm font-semibold whitespace-nowrap  mt-2"
                 href="">Visit here
-                </a>
+                </a> */}
         </div>
         <img src="../../../public/img/bg-banner.jpg" alt="" className="mb-6 shadow-md rounded-lg bg-slate-50 w-full sm:w-[17rem] sm:mb-0 xl:mb-6 xl:w-[500px] h-[314px] w-[597px] object-cover border-2 border-black hover:border-[30px] transition-all" width="1216" height="640" data-aos="flip-left"/>
     </li>
     ))}
 </ul>
 </div>
+{store.isShow && <ModalProject position="center" info={info}/>} 
+
 
 <Footer/>
     </>
