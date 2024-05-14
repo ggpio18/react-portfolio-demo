@@ -18,6 +18,14 @@ thuder clinet test
 -  "project_pl": "prog lang project2.2",
 -  "project_title": "proj title2.2",
 -  "project_description": "proj description2.2"
+  
+-  #contact create
+-  "contact_location": "san pablo city1.1",
+-  "contact_portnumber": 9164923366,
+- "contact_portemail": "port@gmail.com1.1",
+-  "contact_fullname": "john doe1.1",
+-  "contact_publicemail": "public@gmail.com1.1",
+-  "contact_publicnumber": 9164923366
 
 - #update is => PUT
 - "project_pl": "prog lang project2.2",
