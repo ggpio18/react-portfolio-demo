@@ -41,7 +41,7 @@ const PortfolioTable = ({isLoading, isFetching, portfolio, setItemEdit}) => {
 
   return (
     <>
-          <div className="table-wrapper relative overflow-y-scroll h-[600px]">
+          <div className="table-wrapper relative overflow-y-scroll h-[600px] bg-primary">
         {isFetching && <SpinnerFetching/>}
                     <table>
                         <thead className='sticky top-0 relative z-10 bg-primary'>
@@ -50,6 +50,7 @@ const PortfolioTable = ({isLoading, isFetching, portfolio, setItemEdit}) => {
                                 <th className='w-[150px]'>Title</th>
                                 <th className='w-[80px]'>Category</th>
                                 <th className='w-[80px]'>Published</th>
+                                <th className='w-[80px]'>Image</th>
                                 <th className='w-[100px]'>Action</th>
                             </tr>
                         </thead>
@@ -76,6 +77,7 @@ const PortfolioTable = ({isLoading, isFetching, portfolio, setItemEdit}) => {
                         <td>{item.portfolio_title}</td>
                         <td>{item.portfolio_category}</td>
                         <td>{item.portfolio_publish_date}</td>
+                        <td>{item.portfolio_image}</td>
                         
                         
                         <td className='table-action'>

@@ -23,6 +23,27 @@
   font-display: swap;
 }
 
+/* UI */
+
+@font-face {
+  font-family: 'Inter-Regular';
+  src: url(/fonts/Regular-Bold.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'Inter-Light';
+  src: url(/fonts/Inter-Light.woff) format("woff");
+}
+@font-face {
+  font-family: 'Inter-Medium';
+  src: url(/fonts/Inter-Medium.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'Inter-Bold';
+  src: url(/fonts/Inter-Bold.woff) format("woff");
+}
+
 :root{
   --primary: 255 255 255;
   --secondary: 242 242 242;
@@ -66,16 +87,16 @@
 @layer base {
   body {
     @apply
-    bg-primary
+    bg-portsecondary
     text-content
-    font-regular
+    font-regularui
     overflow-x-hidden
   }
 
-  a{
+  /* a{
     @apply
     text-content
-  }
+  } */
 
   ul {
     @apply
@@ -94,14 +115,14 @@
     @apply
     font-bold
     text-content
-    font-thicker
+    font-thicker2
   }
 
-  h1{
+  /* h1{
     @apply
     text-3xl
     mb-4
-  }
+  } */
   h2{
     @apply
     text-xl
@@ -121,8 +142,9 @@
   p{
     @apply
     mb-2
-    !leading-5
-    opacity-60
+    font-regularui
+    /* !leading-5 */
+    /* opacity-60 */
   }
   
   table{
@@ -224,7 +246,7 @@
   mx-[20rem]
 }
 
-.btn{
+.btnui{
   @apply
   py-3
   px-7
@@ -234,7 +256,7 @@
   border-black
   transition-all
 }
-.btn:hover{
+.btnui:hover{
   @apply
   py-3
   px-7
@@ -245,7 +267,7 @@
   transition-all
 }
 
-.btn--v2{
+.btnui--v2{
   @apply
   py-3
   px-7
@@ -256,7 +278,7 @@
   transition-all
 }
 
-.btn--v3{
+.btnui--v3{
   @apply
   py-3
   px-7
@@ -267,7 +289,7 @@
   transition-all
 }
 
-.btn--v3:hover{
+.btnui--v3:hover{
   @apply
   py-3
   px-7
@@ -277,6 +299,9 @@
   border-black
   transition-all
 }
+
+/* contact */
+
 
 /* ui portfolio */
 .menu{

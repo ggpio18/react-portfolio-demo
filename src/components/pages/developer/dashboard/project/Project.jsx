@@ -39,7 +39,7 @@ const Project = () => {
   return (
     <>
 
-      <section className='flex overflow-x-hidden'>
+      <section className='flex overflow-x-hidden bg-primary'>
         <Navigation/>
         <main className='w-[calc(100%-250px)]'>
             <Header/>
@@ -47,7 +47,7 @@ const Project = () => {
         <div className='flex relative'>
             <div className={`main-wrapper transition-all px-4 py-3 max-h-[calc(100vh - 65px)] w-full `}>
                 <div className='flex justify-between items-center'>
-                    <h1>Projects Database</h1>
+                    <h1 className='text-3xl mb-4'>Projects Database</h1>
                     {/* <Searchbar setIsSeach={setIsSeach} setKeyword={setKeyword}/> */}
                 </div>
             

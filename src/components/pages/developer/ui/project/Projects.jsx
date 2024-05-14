@@ -5,6 +5,8 @@ import useQueryData from '../../../../custom-hook/useQueryData';
 import Footer from '../footer/Footer';
 import Header from '../header/Header';
 import ModalProject from './ModalProject';
+import SpinnerFetching from '../../../../partials/spinners/SpinnerFetching';
+import { devBaseImgUrl } from '../../../../helpers/functions-general';
 
 const Projects = () => {
     const {store, dispatch} = React.useContext(StoreContext);
@@ -39,7 +41,7 @@ const Projects = () => {
                     {portfolio?.data.map((item, key)=>(
                         <div className="project_card" key={key}>
         
-                        <img src="https://via.placeholder.com/300x300" alt=""  className='w-full h-[300px] object-cover'/>
+                        <img src={`${devBaseImgUrl}/${item.portfolio_image}`} alt=""  className='w-full h-[300px] object-cover'/>
                         <h4 className='text-center pt-5 pb-2 mb-0'>{item.portfolio_title}</h4>
                         <ul className='flex justify-between opacity-55 mb-10'>
                             <li><small>{item.portfolio_category}</small></li>
@@ -70,27 +72,27 @@ const Projects = () => {
 <div className="lg:px-[20rem] mt-10">
 <ul className="grid grid-cols-1 xl:grid-cols-1 gap-y-10 gap-x-6 items-start p-8">
 {project?.data.map((item, key)=>(
-    <li className="relative flex flex-col sm:flex-row xl:flex-row items-start" key={key}>
+     item.project_is_active === 1 && (
+        <li className="relative flex flex-col sm:flex-row xl:flex-row items-start " key={key}>
         <div className="order-1 sm:ml-6 xl:ml-6 w-[495px]" data-aos="fade-down-left">
             <h3 className="mb-1 text-slate-900 font-semibold">
                 <span className="mb-1 block text-sm leading-6 text-indigo-500">{item.project_pl}</span>{item.project_title}
             </h3>
             <div className="prose prose-slate prose-sm text-slate-600">
                 <p>{item.project_description}</p>
-                <ul>
+                {/* <ul>
                     <li>hello</li>
                     <li>hello</li>
                     <li>hello</li>
                     <li>hello</li>
-                </ul>
+                </ul> */}
             </div>
-            <button className="btn inline-flex items-center  text-sm font-semibold whitespace-nowrap  mt-2" onClick={()=>handleShowProject(item)}>Visit here</button>
-            {/* <a className="btn inline-flex items-center  text-sm font-semibold whitespace-nowrap  mt-2"
-                href="">Visit here
-                </a> */}
+            <button className="btnui inline-flex items-center  text-sm font-semibold whitespace-nowrap  mt-2" onClick={()=>handleShowProject(item)}>Visit here</button>
         </div>
-        <img src="../../../public/img/bg-banner.jpg" alt="" className="mb-6 shadow-md rounded-lg bg-slate-50 w-full sm:w-[17rem] sm:mb-0 xl:mb-6 xl:w-[500px] h-[314px] w-[597px] object-cover border-2 border-black hover:border-[30px] transition-all" width="1216" height="640" data-aos="flip-left"/>
+        <img src={`${devBaseImgUrl}/${item.project_img}`} alt="" className="mb-6 shadow-md rounded-lg bg-slate-50 w-full sm:w-[17rem] sm:mb-0 xl:mb-6 xl:w-[500px] h-[314px] w-[597px] object-contain border-2 border-black hover:border-[30px] transition-all" width="1216" height="640" data-aos="flip-left"/>
     </li>
+     )
+    
     ))}
 </ul>
 </div>

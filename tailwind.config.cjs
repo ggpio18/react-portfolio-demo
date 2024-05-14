@@ -15,7 +15,7 @@ export default {
         info: 'rgb(var(--info) / <alpha-value>)',
         warning: 'rgb(var(--warning) / <alpha-value>)',
         // portfolio ui
-        portprimary: 'rgb(var(--portprimary / <alpha-value>)',
+        portprimary: 'rgb(var(--portprimary)/ <alpha-value>)',
         portprimary2: 'rgb(var(--portprimary2) / <alpha-value>)',
         portsecondary: 'rgb(var(--portsecondary) / <alpha-value>)',
         portaccent: 'rgb(var(--portaccent) / <alpha-value>)',
@@ -24,26 +24,6 @@ export default {
         porthaccent: 'rgb(var(--porthaccent) / <alpha-value>)',
       },
 
-      backgroundColor: {
-        // dashboard
-        primary: 'rgb(var(--primary) / <alpha-value>)',
-        secondary: 'rgb(var(--secondary) / <alpha-value>)',
-        accent: 'rgb(var(--accent) / <alpha-value>)',
-        content: 'rgb(var(--content) / <alpha-value>)',
-        line:'rgb(var(--line) / <alpha-value>)',
-        alert: 'rgb(var(--alert) / <alpha-value>)',
-        disable: 'rgb(var(--disable) / <alpha-value>)',
-        info: 'rgb(var(--info) / <alpha-value>)',
-        warning: 'rgb(var(--warning) / <alpha-value>)',
-         // portfolio ui
-         portprimary: 'rgb(var(--portprimary / <alpha-value>)',
-         portprimary2: 'rgb(var(--portprimary2) / <alpha-value>)',
-         portsecondary: 'rgb(var(--portsecondary) / <alpha-value>)',
-         portaccent: 'rgb(var(--portaccent) / <alpha-value>)',
-         portaccent2: 'rgb(var(--portaccent2) / <alpha-value>)',
-         portheader: 'rgb(var(--portheader) / <alpha-value>)',
-         porthaccent: 'rgb(var(--porthaccent) / <alpha-value>)',
-      },
 
       fill: {
         primary: 'var(--primary)',
@@ -59,7 +39,11 @@ export default {
       fontFamily: {
         regular: "Roboto-regular",
         thick: "Roboto-medium",
-        thicker: "Roboto-bold"
+        thicker: "Roboto-bold",
+        regularui: "Inter-Regular",
+        light: "Inter-Light",
+        medium: "Inter-Medium",
+        thicker2: "Inter-Bold"
       },
 
       keyframes: {

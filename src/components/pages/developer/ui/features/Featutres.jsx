@@ -20,7 +20,7 @@ const Featutres = () => {
     
   return (
     <>
-      <section className="pt-20 pb-12 lg:pt-[120px] lg:pb-[90px] dark:bg-dark bg-primary ">
+      <section className="pt-20 pb-12 lg:pt-[120px] lg:pb-[90px] dark:bg-dark bg-portprimary ">
    <div className="container mx-auto">
       <div className="-mx-4 flex flex-wrap" data-aos="zoom-in">
          <div className="w-full px-4">
@@ -42,7 +42,8 @@ const Featutres = () => {
       </div>
       <div className="-mx-4 flex flex-wrap">
       {services?.data.map((item, key)=>(
-         <div className="w-full px-4 md:w-1/2 lg:w-1/3"  data-aos="flip-up" key={key}>
+          item.services_is_active === 1 && (
+            <div className="w-full px-4 md:w-1/2 lg:w-1/3"  data-aos="flip-up" key={key}>
             <div
                className="mb-9 rounded-[20px] bg-white hover:bg-porthaccent hover:transition-all transition-all  dark:bg-dark-2 p-10 shadow-2 hover:shadow-lg md:px-7 xl:px-10"
                >
@@ -70,6 +71,8 @@ const Featutres = () => {
                </p>
             </div>
          </div>
+          )
+         
       ))}
 
          {/* <div className="w-full px-4 md:w-1/2 lg:w-1/3"  data-aos="flip-up">

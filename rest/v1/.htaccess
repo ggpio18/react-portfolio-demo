@@ -8,6 +8,8 @@ RewriteCond %{REQUEST_FILENAME} !-f
 Header set Access-Control-Allow-Origin *
 
 #################################### ALL FOR DEVELOPER #################################
+RewriteRule ^upload/photo$ core/upload-photo.php [L]
+
 
 ### SETTING PROJECTS sir mon ###
 RewriteRule ^portfolio$ controllers/portfolio/portfolio.php [L]
@@ -28,8 +30,8 @@ RewriteRule ^project/active/([0-9]+)$ controllers/project/active.php?projectid=$
 RewriteRule ^project/search$ controllers/project/search.php [L]
 
 ### SETTING CONTACT###
-RewriteRule ^contactt$ controllers/contactt/contactt.php [L]
-RewriteRule ^contactt/([0-9]+)$ controllers/contactt/contactt.php?contacttid=$1 [L]
-RewriteRule ^contactt/active/([0-9]+)$ controllers/contactt/active.php?contacttid=$1 [L]
-RewriteRule ^contactt/search$ controllers/contactt/search.php [L]
+RewriteRule ^contact$ controllers/contact/contact.php [L]
+RewriteRule ^contact/([0-9]+)$ controllers/contact/contact.php?contactid=$1 [L]
+RewriteRule ^contact/active/([0-9]+)$ controllers/contact/active.php?contactid=$1 [L]
+RewriteRule ^contact/search$ controllers/contact/search.php [L]
 

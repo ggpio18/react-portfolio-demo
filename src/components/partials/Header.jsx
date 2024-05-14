@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <header className='header px-4 py-3 border-b border-line'>
+    <header className='header px-4 py-3 border-b border-line bg-primary'>
       <div className='flex justify-end items-center gap-4 w-full relative'>
         <button className='text-3xl'><CiBellOn /></button>
         <img src="https://via.placeholder.com/40x40" alt=""  className='size-[40px] rounded-full object-cover'/>

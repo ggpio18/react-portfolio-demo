@@ -6,6 +6,7 @@ Class Project {
     public $project_pl;
     public $project_title;
     public $project_description;
+    public $project_img;
     public $project_datetime;
     public $project_created;
     public $project_search;
@@ -26,12 +27,14 @@ Class Project {
             $sql .= "( project_pl, ";
             $sql .= "project_title, ";
             $sql .= "project_description, ";
+            $sql .= "project_img, ";
             $sql .= "project_is_active, ";
             $sql .= "project_created, ";
             $sql .= "project_datetime ) values ( ";
             $sql .= ":project_pl, ";
             $sql .= ":project_title, ";
             $sql .= ":project_description, ";
+            $sql .= ":project_img, ";
             $sql .= ":project_is_active, ";
             $sql .= ":project_created, ";
             $sql .= ":project_datetime ) ";
@@ -40,6 +43,7 @@ Class Project {
                 "project_pl" => $this->project_pl,
                 "project_title" => $this->project_title,
                 "project_description" => $this->project_description,
+                "project_img" => $this->project_img,
                 "project_is_active" => $this->project_is_active,
                 "project_created" => $this->project_created,
                 "project_datetime" => $this->project_datetime,
@@ -87,6 +91,7 @@ Class Project {
             $sql .= "project_pl = :project_pl, ";
             $sql .= "project_title = :project_title, ";
             $sql .= "project_description = :project_description, ";
+            $sql .= "project_img = :project_img, ";
             $sql .= "project_datetime = :project_datetime ";
             $sql .= "where project_aid  = :project_aid ";
             $query = $this->connection->prepare($sql);
@@ -94,6 +99,7 @@ Class Project {
                 "project_pl" => $this->project_pl,
                 "project_title" => $this->project_title,
                 "project_description" => $this->project_description,
+                "project_img" => $this->project_img,
                 "project_datetime" => $this->project_datetime,
                 "project_aid" => $this->project_aid,
             ]);

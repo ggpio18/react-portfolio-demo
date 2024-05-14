@@ -10,6 +10,7 @@ if (array_key_exists("projectid", $_GET)) {
     $project->project_pl = checkIndex($data, "project_pl");
     $project->project_title = checkIndex($data, "project_title");
     $project->project_description = checkIndex($data, "project_description");
+    $project->project_img = checkIndex($data, "project_img");
     $project->project_datetime = date("Y-m-d H:i:s");
 
     checkId($project->project_aid);

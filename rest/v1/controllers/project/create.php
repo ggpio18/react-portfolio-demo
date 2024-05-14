@@ -9,6 +9,7 @@ checkPayload($data);
 $project->project_pl = checkIndex($data, "project_pl");
 $project->project_title = checkIndex($data, "project_title");
 $project->project_description = checkIndex($data, "project_description");
+$project->project_img = checkIndex($data, "project_img");
 $project->project_is_active = 1;
 $project->project_created = date("Y-m-d H:i:s");
 $project->project_datetime = date("Y-m-d H:i:s");

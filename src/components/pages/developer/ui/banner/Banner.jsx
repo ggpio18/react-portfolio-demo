@@ -30,7 +30,7 @@ const Banner = () => {
                 with a keen eye for detail. Lets work together so 
                 we can achieve you business goals. </p>
                 </div>
-          <button className='btn'><Link to="/project">Projects</Link> </button>
+          <button className='btnui text-black'><Link to="/project">Projects</Link> </button>
           </div>
         </div>
 

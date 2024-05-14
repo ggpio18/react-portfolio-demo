@@ -14,17 +14,17 @@ const Navigation = () => {
   };
 
   return (
-    <aside className='px-4 py-6 w-[250px] text-primary h-screen border-r border-line'>
+    <aside className='px-4 py-6 w-[250px] text-primary h-screen border-r border-line bg-primary'>
       <div className='flex items-center gap-4'>
-        <Logo/>
-        <h1 className='mb-0'>School</h1>
+        <Logo className="text-3xl"/>
+        <h1 className='mb-0 text-2xl mb-4'>Portfolio Dashboard</h1>
       </div>
       
 
       <ul className='nav'>
         <li className={`nav-link ${activeLink === '/portfolio' ? 'active' : ''}`}><Link to="/portfolio" onClick={() => handleLinkClick('/portfolio')}><MdOutlineDashboard />Dashboard</Link></li>
 
-        <li className='nav-link'><Link to="#"><AiOutlineMessage />Messenger</Link></li>
+        <li className={`nav-link ${activeLink === '/contact' ? 'active' : ''}`}><Link to="/contact" onClick={() => handleLinkClick('/contact')}><AiOutlineMessage />Contacts</Link></li>
 
         <li className={`nav-link ${activeLink === '/service' ? 'active' : ''}`}><Link to="/service" onClick={() => handleLinkClick('/service')}><MdOutlineDashboard />Services</Link></li>
 
