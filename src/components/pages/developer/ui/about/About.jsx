@@ -8,6 +8,7 @@ import { IoMailSharp } from "react-icons/io5";
 
 const About = () => {
   //download resume
+  // try
   const handleDownloadResume = () => {
     const link = document.createElement('a');
     link.href = '../../resume/resume.pdf';
