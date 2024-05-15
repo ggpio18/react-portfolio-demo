@@ -8,6 +8,8 @@ import Featutres from './features/Featutres'
 import Terminal from './terminal/Terminal'
 import Projectg from './project gallery/Projectg'
 import Cta from './cta/Cta'
+import { SpotifyEmbed } from 'spotify-embed'
+
 
 const Home = () => {
   return (
@@ -17,6 +19,10 @@ const Home = () => {
       <About/>
       <Featutres/>
       <Terminal/>
+      <div className="playlist flex justify-center items-center">
+          <SpotifyEmbed src="https://open.spotify.com/track/0xqYLCBpCNqPDTsuwPPkfq?si=41e33bc027ca4c88" />
+        </div>
+
       <Projectg/>
       <Cta/>
       {/* projects */}

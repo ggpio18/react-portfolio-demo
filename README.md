@@ -10,6 +10,7 @@ Currently, two official plugins are available:
 - npm i @tailwindcss/aspect-ratio
 - npm i @heroicons/react
 - npm i react-spotify-embed
+- npm install spotify-embed
 
 thuder clinet test
 

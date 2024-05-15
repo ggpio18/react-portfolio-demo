@@ -14,7 +14,7 @@ const ModalProject = ({position, info}) => {
         <div className='bg-secondary p-8 max-w-[900px] w-full relative rounded-md'>
             <button className='absolute top-2 right-4'><LiaTimesSolid className='text-xl' onClick={handleCloseProject}/></button>
             <div className="grid grid-cols-2 gap-8">
-                <img src={`${devBaseImgUrl}/${info.project_img}`} alt=""  className='w-full h-[400px] object-cover'/>
+                <img src={`${devBaseImgUrl}/${info.project_img}`} alt=""  className='w-full h-[400px] object-contain'/>
 
                 <div className='content'>
                     <h3>{info.project_pl}</h3>
