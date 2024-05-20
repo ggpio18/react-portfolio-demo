@@ -38,8 +38,8 @@ const About = () => {
             <button className='btnui btnui--v2' onClick={handleDownloadResume}>Download CV</button>
           </div>
           <div className="about_right grid grid-cols-1 place-items-center relative" data-aos="flip-down">
-            <img src="../../../public/img/aboutme.jpg" alt=""  className='object-cover 2xl:size-[500px]  lg:size-[500px] sm:size-[300px] border border-black z-[999]'/>
-            <div className="grid md:grid md:grid-cols-1 absolute lg:size-[500px]  md:size-[300px]  border bg-black border-black 
+            <img src="../../../public/img/aboutme.jpg" alt=""  className='object-cover 2xl:size-[500px]  lg:size-[500px] sm:size-[200px] border border-black z-[999]'/>
+            <div className="grid md:grid md:grid-cols-1 absolute lg:size-[500px]  md:size-[300px] sm:size-[50px]  border bg-black border-black 
             -bottom-[20px] -right-4">
             </div>
           </div>

@@ -24,7 +24,7 @@ const Banner = () => {
         <div className="container">
           <div className="hero__wrapper text-center grid grid-cols-1 place-items-center phone:">
             <h1 className='text-[5rem] animate__animated animate__bounce'>Welcome</h1>
-            <h1 className='text-[5rem]  animate-type2'>HELLO I'M <span className='text-porthaccent'>PIO</span></h1>
+            <h1 className='text-[min(12vw,5rem)]  animate-type2'>HELLO I'M <span className='text-porthaccent'>PIO</span></h1>
             <div className='lg:px-[17rem]  md:px-[10rem]'>
             <p className='mb-5 mx-[12rem]' data-aos="fade-up">Im an I.T student aspiring to be A full stack-developer
                 with a keen eye for detail. Lets work together so 

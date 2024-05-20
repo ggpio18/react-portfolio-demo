@@ -97,7 +97,8 @@ const Contacts = () => {
                          initialValues={initVal}
                          validationSchema={yupSchema}
                          onSubmit={async (values) => {
-                             mutation.mutate(values)
+                             mutation.mutate(values),
+                             resetform({values: ''});
                          }}
                     >
                         {(props) => {

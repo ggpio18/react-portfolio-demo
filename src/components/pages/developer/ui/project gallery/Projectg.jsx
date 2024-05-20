@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react';
 import { StoreContext } from '../../../../../store/StoreContext';
-import { setIsShow } from '../../../../../store/StoreAction';
 import useQueryData from '../../../../custom-hook/useQueryData';
 import { devBaseImgUrl } from '../../../../helpers/functions-general';
 
@@ -17,12 +16,14 @@ const Projectg = () => {
       "/v1/project", // endpointO
       "get", // method
     );
+    useEffect(() => {
+      // Check if project data is available and store it in local storage
+      if (project && project.data) {
+        localStorage.setItem("projectData", JSON.stringify(project.data));
+      }
+    }, [project]);
+  // const data = project?.data || [];
 
-    const handleShowProject = (item) => {
-      dispatch(setIsShow(true));
-      setInfo(item);
-
-  }
   return (
     <>
       {/* projects gallery  MUST FINISHED*/}
@@ -40,25 +41,30 @@ const Projectg = () => {
     <div className="flex w-1/2 flex-wrap" data-aos="fade-up"
      data-aos-anchor-placement="top-center">
       
+      
       <div className="w-1/2 p-1 md:p-2 hover:bg-[#09090979]  hover:opacity-45 ">
       {/* {project?.data.map((item, key)=>( */}
+      {/* {project?.data.slice(0,1).map((item, key)=>( */}
         <img
           alt="gallery"
-          className="block h-full w-full rounded-lg object-cover object-center  "
-          src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(72).webp"  />
-          {/* ))} */}
+          className="block h-full w-full rounded-lg object-cover object-center" 
+          src="../../../public/img/proj1.jpg" />
+          {/* {`${devBaseImgUrl}/${item.project_img}`} */}
+        {/* ))} */}
       </div>
+
+
       <div className="w-1/2 p-1 md:p-2 hover:bg-[#09090979]  hover:opacity-45 ">
         <img
           alt="gallery"
           className="block h-full w-full rounded-lg object-cover object-center"
-          src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(72).webp" />
+          src="../../../public/img/proj9.jpg" />
       </div>
       <div className="w-full p-1 md:p-2 hover:bg-[#09090979]  hover:opacity-45 ">
         <img
           alt="gallery"
           className="block h-full w-full rounded-lg object-cover object-center"
-          src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp" />
+          src="../../../public/img/proj13.png" />
       </div>
     </div>
 
@@ -68,19 +74,19 @@ const Projectg = () => {
         <img
           alt="gallery"
           className="block h-full w-full rounded-lg object-cover object-center"
-          src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(74).webp" />
+          src="../../../public/img/proj11.png" />
       </div>
       <div className="w-1/2 p-1 md:p-2 hover:bg-[#09090979]  hover:opacity-45 ">
         <img
           alt="gallery"
           className="block h-full w-full rounded-lg object-cover object-center"
-          src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(75).webp" />
+          src="../../../public/img/proj4.jpg" />
       </div>
       <div className="w-1/2 p-1 md:p-2 hover:bg-[#09090979]  hover:opacity-45 ">
         <img
           alt="gallery"
           className="block h-full w-full rounded-lg object-cover object-center"
-          src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(77).webp" />
+          src="../../../public/img/proj6.png" />
       </div>
     </div>
   </div>

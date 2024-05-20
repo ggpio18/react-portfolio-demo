@@ -226,7 +226,7 @@
    }
    input{
     @apply
-    w-[100rem] mt-2 py-3 px-3 rounded-lg bg-white dark:bg-portprimary2 border border-gray-400 dark:border-gray-700 text-gray-800 font-semibold focus:border-indigo-500 focus:outline-none
+    w-[100rem] mt-2 py-3 px-3 rounded-lg bg-white dark:bg-portprimary2 border border-gray-400 dark:border-gray-700 text-white font-semibold focus:border-indigo-500 focus:outline-none
    }
   /* Reusable components */
   .animate-type{

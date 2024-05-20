@@ -18,7 +18,7 @@ const ModalConfirmed = ({position, endpoint, queryKey, isArchiving}) => {
     mutationFn: (values) => queryData(endpoint, "put", values),
     onSuccess: (data) => {
       // Invalidate and refetch
-      queryClient.invalidateQueries({ queryKey: ["portfolio"] });
+      queryClient.invalidateQueries({ queryKey: [queryKey] });
 
       if (data.success) {
         dispatch(setIsActive(false))

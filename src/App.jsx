@@ -9,6 +9,10 @@ import Services from "./components/pages/developer/dashboard/services/Services"
 import Project from "./components/pages/developer/dashboard/project/Project"
 import Contact from "./components/pages/developer/dashboard/contact/Contact"
 import Contacts from "./components/pages/developer/ui/contact/Contacts"
+import Login from "./components/pages/developer/access/Login"
+import ForgotPassword from "./components/pages/developer/access/ForgotPassword"
+import CreatePassword from "./components/pages/developer/access/CreatePassword"
+import Users from "./components/pages/developer/dashboard/users/Users"
 
 // import Contacts from "./components/pages/developer/dashboard/contact/Contacts"
 
@@ -22,6 +26,7 @@ function App() {
       <Router>
         <Routes>
           {/* Dashboard */}
+          <Route path="/Users" element={<Users/>}/>
         <Route path="/portfolio" element={<Portfolio/>}/>
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/service" element={<Services/>}/>
@@ -30,6 +35,11 @@ function App() {
         <Route path="/home" element={<Home/>}/>
         <Route path="/projects" element={<Projects/>}/>
         <Route path="/contacts" element={<Contacts/>}/>
+        
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/forgot-password" element={<ForgotPassword/>}/>
+        <Route path="/create-password" element={<CreatePassword/>}/>
+
         </Routes>
       </Router>
       </StoreProvider>
