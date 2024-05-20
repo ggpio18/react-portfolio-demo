@@ -40,4 +40,5 @@ RewriteRule ^user$ controllers/user/user.php [L]
 RewriteRule ^user/([0-9]+)$ controllers/user/user.php?userid=$1 [L]
 RewriteRule ^user/active/([0-9]+)$ controllers/user/active.php?userid=$1 [L]
 RewriteRule ^user/search$ controllers/user/search.php [L]
-
+RewriteRule ^user/password$ controllers/user/set-password.php [L]
+RewriteRule ^user/reset$ controllers/user/reset-password.php [L]

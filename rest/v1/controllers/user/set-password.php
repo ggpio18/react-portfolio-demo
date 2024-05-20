@@ -2,14 +2,10 @@
 // set http header
 require '../../core/header.php';
 require '../../core/Encryption.php';
-// use needed functions
+// use neunctions
 require '../../core/functions.php';
-// use notification template
-require '../../notification/reset-password.php';
-// use needed classes
+// use nelasses
 require '../../models/User.php';
-
-
 
 // check database connection
 $conn = null;
@@ -22,7 +18,6 @@ $encrypt = new Encryption();
 $body = file_get_contents("php://input");
 $data = json_decode($body, true);
 // get $_GET data
-// check if userid is in the url e.g. /user/1
 $error = [];
 $returnData = [];
 // validate api key
@@ -30,27 +25,12 @@ if (isset($_SERVER['HTTP_AUTHORIZATION'])) {
     checkApiKey();
     // check data
     checkPayload($data);
-    // get task id from query string
-    // get userid from query string
-
-    $user->user_key = $encrypt->doHash(rand());
+    $user->user_password = $encrypt->doPasswordHash($data["new_password"]);
+    $user->user_key = $data["key"];
     $user->user_datetime = date("Y-m-d H:i:s");
-    $user->user_email = trim($data["item"]);
-    $password_link = "/create-password";
-
-    $query = $user->readLogin();
-    if ($query->rowCount() == 0) {
-        returnError("Invalid email. Please use a registered one.");
-    }
-    $mail = sendEmail(
-        $password_link,
-        $user->user_email,
-        $user->user_key,
-    );
-
-    $query = checkResetPassword($user);
+    $query = checkSetPassword($user);
     http_response_code(200);
-    returnSuccess($user, "User ", $query);
+    returnSuccess($user, "Key", $query);
     // return 404 error if endpoint not available
     checkEndpoint();
 }
