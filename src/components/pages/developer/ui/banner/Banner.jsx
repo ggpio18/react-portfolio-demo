@@ -20,13 +20,13 @@ const Banner = () => {
             <li><Link to="#"></Link><IoMailSharp /></li>
           </ul>
         </div>
-
+        {/* text-[calc(56% - 5rem)] */}
         <div className="container">
           <div className="hero__wrapper text-center grid grid-cols-1 place-items-center phone:">
-            <h1 className='text-[5rem] animate__animated animate__bounce'>Welcome</h1>
-            <h1 className='text-[min(12vw,5rem)]  animate-type2'>HELLO I'M <span className='text-porthaccent'>PIO</span></h1>
-            <div className='lg:px-[17rem]  md:px-[10rem]'>
-            <p className='mb-5 mx-[12rem]' data-aos="fade-up">Im an I.T student aspiring to be A full stack-developer
+            <h1 className='xl:text-[5rem] lg:text-[4rem] md:text-[3rem] sm:text-[3rem] ph:text-[2rem] animate__animated animate__bounce'>Welcome</h1>
+            <h1 className=' max-w-[700px]   animate-type2 xl:text-[5rem] lg:text-[4rem] md:text-[3rem] sm:text-[3rem] ph:text-[2rem'>HELLO I'M <span className='text-porthaccent'>PIO</span></h1>
+            <div className='inline-block max-w-[700px]'>
+            <p className='mb-5 ' data-aos="fade-up">Im an I.T student aspiring to be A full stack-developer
                 with a keen eye for detail. Lets work together so 
                 we can achieve you business goals. </p>
                 </div>

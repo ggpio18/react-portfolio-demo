@@ -17,8 +17,8 @@ const ModalProject = ({position, info}) => {
                 <img src={`${devBaseImgUrl}/${info.project_img}`} alt=""  className='w-full h-[400px] object-contain'/>
 
                 <div className='content'>
-                    <h3>{info.project_pl}</h3>
-                    <small>{info.project_title}</small>
+                    <h3 className='text-porthaccent'>{info.project_title}</h3>
+                    <small>{info.project_pl}</small>
                     <p className='my-5'>{info.project_description}</p>
                 </div>
 

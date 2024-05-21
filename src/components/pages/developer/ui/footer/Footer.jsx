@@ -14,8 +14,8 @@ const Footer = () => {
     <div className=" lg:px-[15rem] sm:px-1rem">
     <div className='grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 sm:place-items-center  lg:gap-[45%] md:gap-[30%]  sm:gap-[1%] '>
     <div className="left mb-5">
-        <h2 className='mb-1'>PIOLO ARANZA</h2>
-        <p className=''>A future programmer focused Web Developer building the Frontend of Websites and Web Applications that leads to the success of the overall product</p>
+        <h2 className='mb-1 sm:text-center'>PIOLO ARANZA</h2>
+        <p className='lg:text-left md:text-center sm:text-center ph:text-centert'>A future programmer focused Web Developer building the Frontend of Websites and Web Applications that leads to the success of the overall product</p>
     </div>
     <div className="right">
         <h2>SOCIALS</h2>
@@ -39,5 +39,5 @@ const Footer = () => {
     </div>
   )
 }
-
 export default Footer
+

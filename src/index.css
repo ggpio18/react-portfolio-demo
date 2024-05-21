@@ -251,10 +251,10 @@
   @apply
   px-[15rem]
 }
-.container{
+/* .container{
   @apply
   mx-[20rem]
-}
+} */
 
 .btnui{
   @apply

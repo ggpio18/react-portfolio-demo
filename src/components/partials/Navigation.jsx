@@ -19,9 +19,9 @@ const Navigation = () => {
 
   return (
     <aside className='px-4 py-6 w-[250px] text-primary h-screen border-r border-line bg-primary'>
-      <div className='flex items-center gap-4'>
-        <Logo className="text-3xl"/>
-        <h1 className='mb-0 text-2xl mb-4'>Portfolio Dashboard</h1>
+      <div className='flex items-center gap-10'>
+        <img src="../../../img/Vector.svg" alt=""  className='size-[100px] mx-auto'/>
+
       </div>
       
 

@@ -60,6 +60,12 @@ export const StoreReducer = (state, action) => {
           ...state,
           isAdd: action.payload,
         };
+
+      case "IS_LOGIN":
+        return {
+          ...state,
+          isLogin: action.payload,
+        };
   
       case "IS_SEARCH":
         return {
@@ -72,6 +78,12 @@ export const StoreReducer = (state, action) => {
           ...state,
           isActive: action.payload,
         };
+
+        case "CREDENTIALS":
+      return {
+        ...state,
+        credentials: action.payload,
+      };
   
       default:
         return state;

@@ -13,6 +13,8 @@ import Login from "./components/pages/developer/access/Login"
 import ForgotPassword from "./components/pages/developer/access/ForgotPassword"
 import CreatePassword from "./components/pages/developer/access/CreatePassword"
 import Users from "./components/pages/developer/dashboard/users/Users"
+import PageNotFound from "./components/partials/PageNotFound"
+import ProtectedRoute from "./components/pages/developer/access/ProtectedRoute"
 
 // import Contacts from "./components/pages/developer/dashboard/contact/Contacts"
 
@@ -26,11 +28,20 @@ function App() {
       <Router>
         <Routes>
           {/* Dashboard */}
-          <Route path="/Users" element={<Users/>}/>
-        <Route path="/portfolio" element={<Portfolio/>}/>
-        <Route path="/contact" element={<Contact/>}/>
-        <Route path="/service" element={<Services/>}/>
-        <Route path="/project" element={<Project/>}/>
+        <Route path="/Users" element={<Users/>}/>
+
+        <Route path="/*" element={<PageNotFound/>}/>
+
+        <Route path="/portfolio" element={
+          <ProtectedRoute>
+        <Portfolio/>
+        </ProtectedRoute>
+        }/>
+
+        <Route path="/contact" element={<ProtectedRoute><Contact/></ProtectedRoute>}/>
+        <Route path="/service" element={<ProtectedRoute> <Services/></ProtectedRoute>}/>
+        <Route path="/project" element={<ProtectedRoute><Project/></ProtectedRoute>}/>
+
         {/* UI */}
         <Route path="/home" element={<Home/>}/>
         <Route path="/projects" element={<Projects/>}/>

@@ -17,9 +17,9 @@ const About = () => {
   };
   return (
     <>
-      <section id='aboutMe' className='aboutMe bg-portsecondary p-10 overflow-hidden transition-all bg-portprimary'>
-      <div className="container2">
-        <div className="aboutme__wrapper grid lg:grid-cols-2 lg:gap-[16rem] md:grid-cols-1 md:gap-[10rem] sm:grid-cols-1 sm:gap-[5rem] place-items-center h-[70vh]" >
+      <section id='aboutMe' className='aboutMe bg-portsecondary p-10 overflow-hidden transition-all bg-portprimary md:mb-[10rem] sm:mb-[10rem]'>
+      <div className="container">
+        <div className="aboutme__wrapper grid lg:grid-cols-2 lg:gap-[16rem]  place-items-center h-[70vh]" >
           <div className="about_left" data-aos="zoom-in-left">
             <h2 className='mb-3 text-3xl animate-type text-black'>About_Pio.</h2>
             <p className='mb-5 text-base'>Hello! Im Piolo C. Aranza, an I.t student currently in my 4th year of the BSIT course. I have a strong passion for technology and genuine curiosity for the ever-evolving world of IT. Throughout my academic journey. I have gained solid foundation in web development, programming, database management, networking and game development. I actively seek opportunities to enhance my knowledge and skills through continuous learning, and I enjoy working on projects both independently and as part of a team</p>
@@ -39,7 +39,7 @@ const About = () => {
           </div>
           <div className="about_right grid grid-cols-1 place-items-center relative" data-aos="flip-down">
             <img src="../../../public/img/aboutme.jpg" alt=""  className='object-cover 2xl:size-[500px]  lg:size-[500px] sm:size-[200px] border border-black z-[999]'/>
-            <div className="grid md:grid md:grid-cols-1 absolute lg:size-[500px]  md:size-[300px] sm:size-[50px]  border bg-black border-black 
+            <div className="grid md:grid md:grid-cols-1 absolute xl:size-[500px] lg:size-[500px]  md:size-[300px] sm:size-[300px]  border bg-black border-black 
             -bottom-[20px] -right-4">
             </div>
           </div>

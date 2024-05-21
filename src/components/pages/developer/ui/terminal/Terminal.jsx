@@ -29,8 +29,8 @@ const Terminal = () => {
       </div>
     
     {/* try */}
-    <div className="px-[30%] mb-5" data-aos="flip-up">
-    <div className="bg-black text-white p-4 rounded-lg">
+    <div className="px-[30%] mb-5 " data-aos="flip-up">
+    <div className="bg-black text-white p-4 rounded-lg ">
       <div className="flex items-center">
         <div className="h-3 w-3 bg-red-500 rounded-full mr-2"></div>
         <div className="h-3 w-3 bg-yellow-500 rounded-full mr-2"></div>

@@ -62,11 +62,11 @@ const Projects = () => {
 
       {/* Projects */}
       <div className='text-center mt-[8rem]' data-aos="fade-down">
-            <div className='flex justify-center gap-5'>
+            <div className='lg:flex lg:justify-center md:flex md:justify-center sm:flex sm:justify-center ph:flex ph:justify-center   gap-5'>
             <img src="../../../public/img/projectlogo.png" alt="" className='size-[30px]'/>
             <h1 className='text-black text-3xl'>PROJECTS</h1>
             </div>
-            <p className='flex justify-center text-black px-[50rem] mt-3'>Here you will find some of the personal and clients projects 
+            <p className='lg:flex lg:justify-center md:justify-center text-black xl:px-[30rem] lg:px-[30rem] md:px-[20rem] mt-3'>Here you will find some of the personal and clients projects 
             that I created with each project containing its own case study</p>
         </div>
 <div className="lg:px-[20rem] mt-10">
